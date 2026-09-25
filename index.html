@@ -5,895 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kızılderililer — Kuzey Amerika'nın İlk Halkları</title>
 <style>
-  /* ===== SVG FİLTRELER ===== */
-  svg.filters { position: absolute; width: 0; height: 0; }
-
-  /* ===== DEĞİŞKENLER ===== */
   :root {
-    --toprak: #d35400;
+    --toprak: #8b5a2b;
     --koyu: #3e2723;
     --kum: #f5e6d3;
-    --kirmizi: #e74c3c;
-    --turkuaz: #1abc9c;
-    --amber: #f39c12;
-    --ahsap: #6d4c41;
-    --deri: #d2b48c;
-    --kağıt: #faf3e8;
-    --kağıt-koyu: #e6d5bf;
-    --golge: rgba(20,10,5,0.25);
-    --kart-bg: var(--kağıt);
-    --metin: #3e2723;
-    --zemin: #d2b48c;
-    --sis: rgba(200,180,150,0.1);
+    --kirmizi: #c0392b;
+    --turkuaz: #1a7a6e;
   }
-  [data-theme="dark"] {
-    --toprak: #e67e22;
-    --koyu: #1a120b;
-    --kum: #c9b896;
-    --kirmizi: #ff6b6b;
-    --turkuaz: #48dbb4;
-    --amber: #ffd166;
-    --ahsap: #5d4037;
-    --deri: #8d6e63;
-    --kağıt: #2d2420;
-    --kağıt-koyu: #3e2c25;
-    --golge: rgba(0,0,0,0.5);
-    --kart-bg: #2d2420;
-    --metin: #f5e6d3;
-    --zemin: #0d0704;
-    --sis: rgba(0,0,0,0.12);
-  }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
-    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Cambria Math', Georgia, serif;
-    color: var(--metin);
-    line-height: 1.6;
-    transition: color 0.6s ease;
-    /* İkonik tüy başlığı (War Bonnet) — Kızılderili kültürünün sembolü */
-    background: url('images/warbonnet.jpg') center 15%/cover no-repeat fixed;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--kum);
+    color: var(--koyu);
+    line-height: 1.7;
   }
-  /* Hafif overlay — metin okunabilirliği için */
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(250,243,232,0.82);
-    z-index: -1;
-    pointer-events: none;
-    transition: background 0.6s ease;
-  }
-  [data-theme="dark"] body::after {
-    background: rgba(15,8,4,0.88);
-  }
-  /* Kağıt seçimi rengi */
-  ::selection {
-    background: var(--amber);
-    color: #3e2723;
-  }
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: var(--deri); }
-  ::-webkit-scrollbar-thumb { background: var(--ahsap); border-radius: 5px; }
-
-  /* ===== HEADER / BAŞLIK ===== */
   header {
-    position: relative;
-    text-align: center;
-    padding: 55px 20px 45px;
-    overflow: hidden;
-    /* Derin orman/toprak gradienti */
-    background:
-      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" stop-color="%232c1810" stop-opacity="0.3"/><stop offset="100%25" stop-color="%232c1810" stop-opacity="0"/></linearGradient></defs><path d="M0,250 Q150,180 300,220 T600,200 T900,230 T1200,180 L1200,300 L0,300Z" fill="url(%23g)"/><path d="M0,270 Q200,200 400,240 T800,220 T1200,260 L1200,300 L0,300Z" fill="%232c1810" opacity="0.15"/></svg>'),
-      linear-gradient(160deg, #3e2723 0%, #8b5a2b 30%, #d35400 55%, #1abc9c 80%, #3e2723 100%);
-    background-size: cover, 100% 100%;
-    background-position: bottom, center;
-    background-repeat: no-repeat;
-    border-bottom: 6px solid var(--ahsap);
-    box-shadow: 0 8px 30px var(--golge);
-  }
-
-  /* Yıldız parıltısı efekti */
-  header::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 40%, rgba(255,255,255,0.04) 0%, transparent 40%);
-    pointer-events: none;
-  }
-  /* Header siluet — Great Plains tipi ve dağlar */
-  header .siluet {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 80px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,100 L0,70 Q30,65 50,50 Q70,35 90,45 T130,40 T170,55 T210,35 T250,50 T290,45 T330,60 T370,40 T410,50 T450,35 T490,45 T530,55 T570,40 T610,50 T650,35 T690,45 T730,55 T770,40 T810,50 T850,35 T890,45 T930,55 T970,40 T1010,50 T1050,35 T1090,45 T1130,55 T1170,40 L1200,70 L1200,100Z" fill="%23f5e6d3" opacity="0.12"/><path d="M150,100 L150,60 Q170,55 180,45 Q190,35 195,30 L200,20 L205,30 Q210,35 220,45 T250,55 T280,45 T310,55 T340,45 L350,100Z" fill="%23f5e6d3" opacity="0.08"/><path d="M850,100 L850,55 Q870,50 880,40 Q890,30 895,25 L900,15 L905,25 Q910,30 920,40 T950,50 T980,40 T1010,50 T1040,40 L1050,100Z" fill="%23f5e6d3" opacity="0.08"/></svg>') bottom/contain no-repeat;
-    pointer-events: none;
-    z-index: 3;
-    opacity: 0.6;
-  }
-
-  header h1 {
-    font-size: 2.4em;
-    letter-spacing: 3px;
+    background: linear-gradient(135deg, var(--koyu), var(--toprak));
     color: var(--kum);
-    text-shadow:
-      0 2px 4px rgba(0,0,0,0.5),
-      0 0 60px rgba(245,230,211,0.08);
-    position: relative;
-    z-index: 2;
-    font-weight: normal;
-    animation: fadeInDown 1.2s ease both;
-  }
-  header p {
-    margin-top: 16px;
-    font-style: italic;
-    color: var(--deri);
-    font-size: 1.15em;
-    letter-spacing: 1px;
-    opacity: 0.85;
-    position: relative;
-    z-index: 2;
-    animation: fadeInUp 1.4s ease both;
-  }
-
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Şerit - geleneksel zikzak deseni */
-  .serit {
-    height: 14px;
-    background:
-      repeating-linear-gradient(
-        45deg,
-        var(--kirmizi) 0 15px,
-        var(--kum) 15px 20px,
-        var(--turkuaz) 20px 40px,
-        var(--kum) 40px 45px
-      );
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
-    position: relative;
-    z-index: 5;
-  }
-
-  /* ===== NAV / MENÜ ===== */
-  nav {
-    background: linear-gradient(to bottom, var(--ahsap), #3e2715);
     text-align: center;
-    padding: 14px;
-    position: sticky; top: 0; z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    border-bottom: 3px solid #3e2715;
-    box-shadow: 0 4px 12px var(--golge);
-    /* Ahşap doku */
-    background-image: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
+    padding: 70px 20px;
+  }
+  header h1 { font-size: 2.8em; letter-spacing: 2px; }
+  header p { margin-top: 12px; font-style: italic; opacity: .9; }
+  .serit {
+    height: 10px;
+    background: repeating-linear-gradient(90deg, var(--kirmizi) 0 30px, var(--kum) 30px 40px, var(--turkuaz) 40px 70px, var(--kum) 70px 80px);
+  }
+  nav {
+    background: var(--koyu);
+    text-align: center;
+    padding: 12px;
+    position: sticky; top: 0;
   }
   nav a {
     color: var(--kum); text-decoration: none;
-    margin: 0 10px; font-size: 1.05em;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    padding: 6px 0;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s;
-    position: relative;
+    margin: 0 14px; font-size: 1.05em;
   }
-  nav a::after {
-    content: "🪶";
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.7em;
-    opacity: 0.4;
-  }
-  nav a:last-of-type::after { content: none; }
-  nav a:hover {
-    color: var(--turkuaz);
-    border-bottom-color: var(--turkuaz);
-  }
-
-  .tema-buton {
-    background: rgba(255,255,255,0.05);
-    border: 1.5px solid var(--turkuaz);
-    color: var(--turkuaz);
-    padding: 6px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.85em;
-    transition: all 0.3s;
-    letter-spacing: 0.5px;
-  }
-  .tema-buton:hover { background: var(--turkuaz); color: #fff; }
-
-  /* ===== BÖLÜM AYRAÇLARI ===== */
-  .ayrac {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin: 40px auto;
-    max-width: 300px;
-    opacity: 0.5;
-  }
-  .ayrac .cizgi {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--toprak), transparent);
-  }
-  .ayrac .ikon {
-    font-size: 1.4em;
-    color: var(--toprak);
-    flex-shrink: 0;
-  }
-
-  /* ===== BÖLÜMLER ===== */
-  section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 55px 25px;
-    position: relative;
-  }
-  section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 5%; right: 5%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--toprak), transparent);
-    opacity: 0.3;
-  }
-  section:first-of-type {
-    margin-top: 20px;
-  }
+  nav a:hover { color: var(--turkuaz); }
+  section { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
   section h2 {
-    color: var(--ahsap);
-    font-size: 1.5em;
+    color: var(--toprak);
+    border-left: 6px solid var(--kirmizi);
+    padding-left: 12px;
     margin-bottom: 20px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-    padding-bottom: 15px;
+    font-size: 1.9em;
   }
-  section h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(to right, transparent, var(--kirmizi), var(--turkuaz), var(--kirmizi), transparent);
-    border-radius: 2px;
-  }
-
-  .ses-buton {
-    background: none;
-    border: 1.5px solid var(--toprak);
-    color: var(--toprak);
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 0.85em;
-    transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    margin-left: 10px;
-  }
-  .ses-buton:hover { background: var(--toprak); color: var(--kum); }
-  .ses-buton.aktif { background: var(--kirmizi); color: #fff; border-color: var(--kirmizi); }
-
-  /* ===== SCROLL ANİMASYONU ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(50px) scale(0.98);
-    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .reveal.gorunur {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  /* ===== KARTLAR (ORGANİK KAĞIT) ===== */
-  .kartlar {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 18px;
-    perspective: 1000px;
-  }
+  .kartlar { display: flex; flex-wrap: wrap; gap: 20px; }
   .kart {
-    background: var(--kart-bg);
-    border-radius: 4px;
-    padding: 16px;
-    position: relative;
-    box-shadow:
-      0 1px 2px rgba(0,0,0,0.15),
-      0 4px 12px var(--golge),
-      inset 0 0 40px rgba(139,90,43,0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(139,90,43,0.12);
-  }
-  .kart:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px var(--golge);
-    z-index: 2;
-  }
-  .kart {
-    cursor: pointer;
-  }
-  .kart-detay {
-    display: none;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 2px dashed rgba(139,90,43,0.15);
-    text-align: left;
-  }
-  .kart.acik .kart-detay {
-    display: none !important;
-  }
-  .kart.acik {
-    border-color: var(--turkuaz);
-    box-shadow: 0 0 0 3px rgba(26,188,156,0.25), 0 8px 25px var(--golge);
-    transform: translateY(-3px);
-  }
-  /* Kart Detay Paneli */
-  #kartDetayPanel {
-    display: none;
-    margin-top: 24px;
-    padding: 28px 32px;
-    background: var(--kart-bg);
-    border-left: 5px solid var(--turkuaz);
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 8px 30px var(--golge);
-    text-align: left;
-    position: relative;
-    animation: fadeIn 0.35s ease;
-  }
-  #kartDetayPanel .panel-icerik p {
-    margin-bottom: 12px;
-    line-height: 1.7;
-    font-size: 0.95em;
-  }
-  #kartDetayPanel .panel-icerik p strong {
-    color: var(--turkuaz);
-  }
-  #kartDetayPanel .panel-kapat {
-    position: absolute;
-    top: 14px;
-    right: 16px;
-    background: transparent;
-    border: 1.5px solid rgba(139,90,43,0.25);
-    color: var(--metin);
-    padding: 5px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.85em;
-    transition: all 0.2s;
-    font-family: inherit;
-  }
-  #kartDetayPanel .panel-kapat:hover {
-    background: var(--kirmizi);
-    color: #fff;
-    border-color: var(--kirmizi);
-    transform: scale(1.05);
-  }
-  [data-theme="dark"] #kartDetayPanel {
-    border-left-color: var(--turkuaz);
-    background: #2d2420;
-  }
-  .kart .ok-isareti { display: none !important; }
-  .kart-detay p {
-    font-size: 0.92em;
-    line-height: 1.65;
-    color: var(--metin);
-    opacity: 0.85;
-    margin-bottom: 8px;
-  }
-  .kart-detay p:last-child {
-    margin-bottom: 0;
-  }
-  .kart::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(to right, var(--kirmizi), var(--turkuaz), var(--toprak));
-    opacity: 0.6;
-  }
-  .kart h3 {
-    color: var(--kirmizi);
-    margin-bottom: 12px;
-    font-size: 1.25em;
-    letter-spacing: 0.5px;
-    font-weight: normal;
-  }
-  .kart img.portre {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 3px;
-    margin-bottom: 14px;
-    filter: contrast(1.05) saturate(1.15);
-    border: 4px solid rgba(193,120,54,0.2);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-    transition: filter 0.4s, transform 0.4s;
-  }
-  .kart:hover img.portre { filter: contrast(1.1) saturate(1.3); transform: scale(1.02); }
-  .kart .kaynak {
-    font-size: 0.78em;
-    color: var(--toprak);
-    opacity: 0.7;
-    font-style: italic;
-    margin-top: 10px;
-    border-top: 1px dashed rgba(139,90,43,0.2);
-    padding-top: 8px;
-  }
-
-  /* ===== TİMELİNE ===== */
-  .timeline {
-    position: relative;
-    padding-left: 24px;
-    margin: 20px 0;
-  }
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--kirmizi), var(--turkuaz), var(--toprak));
-    border-radius: 3px;
-    opacity: 0.6;
-  }
-  .timeline-madde {
-    position: relative;
-    padding: 12px 16px;
-    margin-bottom: 14px;
-    background: var(--kart-bg);
-    border-radius: 4px;
-    box-shadow: 0 2px 10px var(--golge);
-    transition: all 0.4s;
-    border-left: 4px solid var(--kirmizi);
-    transform: rotate(0.3deg);
-  }
-  .timeline-madde:nth-child(even) { transform: rotate(-0.3deg); border-left-color: var(--turkuaz); }
-  .timeline-madde:hover { transform: translateX(10px) rotate(0deg); }
-  .timeline-madde::before {
-    content: "";
-    position: absolute;
-    left: -30px;
-    top: 26px;
-    width: 14px; height: 14px;
-    background: var(--kirmizi);
-    border-radius: 50%;
-    border: 3px solid var(--zemin);
-    box-shadow: 0 0 0 2px var(--kirmizi);
-  }
-  .timeline-madde strong {
-    color: var(--kirmizi);
-    font-size: 1.15em;
-    display: block;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-  }
-
-  /* ===== LİSTE ===== */
-  ul.dolap {
-    list-style: none;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  ul.dolap li {
-    padding: 10px 0 10px 30px;
-    position: relative;
-    border-bottom: 1px dashed rgba(139,90,43,0.15);
-    transition: all 0.3s;
-  }
-  ul.dolap li:hover { padding-left: 44px; color: var(--ahsap); }
-  ul.dolap li::before {
-    content: "🪶";
-    position: absolute;
-    left: 0;
-    top: 14px;
-    font-size: 1.2em;
-    opacity: 0.6;
-  }
-
-  /* ===== ALINTILAR ===== */
-  blockquote {
-    background: var(--kart-bg);
-    border-left: 5px solid var(--turkuaz);
-    padding: 16px 22px;
-    border-radius: 0 6px 6px 0;
-    font-style: italic;
-    margin: 20px auto;
-    max-width: 700px;
-    box-shadow: 0 3px 12px var(--golge);
-    position: relative;
-    transition: transform 0.4s;
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: var(--ahsap);
-    letter-spacing: 0.3px;
-  }
-  blockquote::before {
-    content: """;
-    position: absolute;
-    top: -10px;
-    left: 14px;
-    font-size: 3em;
-    color: var(--turkuaz);
-    opacity: 0.25;
-    font-family: Georgia, serif;
-    line-height: 1;
-  }
-  blockquote:hover { transform: translateX(8px); }
-
-  /* ===== GALERİ ===== */
-  .galeri-arama {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 28px;
-  }
-  .galeri-arama input {
-    width: 100%;
-    max-width: 420px;
-    padding: 14px 24px;
-    border: 2px solid rgba(92,58,30,0.2);
-    border-radius: 30px;
-    font-family: inherit;
-    font-size: 1em;
-    background: var(--kart-bg);
-    color: var(--metin);
-    outline: none;
-    transition: all 0.3s;
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.06);
-  }
-  .galeri-arama input:focus {
-    border-color: var(--turkuaz);
-    box-shadow: 0 0 0 4px rgba(42,138,122,0.12), inset 0 2px 6px rgba(0,0,0,0.06);
-  }
-
-  .galeri-filtreler {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 30px;
-    justify-content: center;
-  }
-  .galeri-filtreler button {
-    background: linear-gradient(to bottom, var(--ahsap), #3e2715);
-    color: var(--kum);
-    border: none;
-    padding: 10px 22px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.9em;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
-  }
-  .galeri-filtreler button::after {
-    content: "";
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--turkuaz);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-  .galeri-filtreler button:hover,
-  .galeri-filtreler button.aktif {
-    background: linear-gradient(to bottom, var(--kirmizi), #80251c);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-  }
-  .galeri-filtreler button:hover::after,
-  .galeri-filtreler button.aktif::after {
-    transform: scaleX(1);
-  }
-
-  .galeri-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 18px;
-    margin-bottom: 30px;
-  }
-
-  .galeri-kart {
-    position: relative;
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    cursor: pointer;
-    background: var(--kart-bg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    aspect-ratio: 16 / 10;
-  }
-  .galeri-kart:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  }
-  .galeri-kart .galeri-resim {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .galeri-kart .galeri-resim img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  .galeri-kart:hover .galeri-resim img {
-    transform: scale(1.05);
-  }
-  .galeri-kart .galeri-resim .etiket {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--kirmizi);
-    color: #fff;
-    padding: 3px 10px;
-    border-radius: 2px;
-    font-size: 0.7em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    z-index: 2;
-  }
-  .galeri-kart .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(30,15,5,0.9) 0%, rgba(30,15,5,0.4) 50%, transparent 100%);
-    color: var(--kum);
-    padding: 30px 14px 10px;
-    pointer-events: none;
-  }
-  .galeri-kart .overlay h4 {
-    font-size: 1em;
-    margin-bottom: 4px;
-    color: #fff;
-    font-weight: normal;
-  }
-  .galeri-kart .overlay p {
-    font-size: 0.78em;
-    opacity: 0.85;
-    line-height: 1.35;
-  }
-  .galeri-kart.gizli { display: none; }
-  .galeri-kart.vurgula { animation: vurgula 0.8s ease; }
-  .galeri-kart.gizli { display: none; }
-  .galeri-kart.vurgula { animation: vurgula 0.8s ease; }
-  @keyframes vurgula {
-    0% { box-shadow: 0 0 0 0 rgba(168,50,38,0.35); }
-    70% { box-shadow: 0 0 0 14px rgba(168,50,38,0); }
-    100% { box-shadow: 0 0 0 0 rgba(168,50,38,0); }
-  }
-
-  /* ===== YUKARI ÇIK ===== */
-  .yukari-buton {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 50px; height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--turkuaz), #1f6558);
-    color: #fff;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .yukari-buton.gorunur {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .yukari-buton:hover {
-    background: #145e55;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-  }
-
-  /* ===== KLAVYE KISAYOLU ===== */
-  .kisa-yol {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    background: var(--kart-bg);
-    border: 1px solid rgba(92,58,30,0.2);
+    flex: 1 1 260px;
+    background: #fff;
     border-radius: 10px;
-    padding: 14px 18px;
-    font-size: 0.78em;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.4s ease;
-    box-shadow: 0 3px 14px var(--golge);
-    z-index: 200;
-    color: var(--metin);
-    max-width: 200px;
-    backdrop-filter: blur(4px);
+    padding: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    border-top: 5px solid var(--turkuaz);
   }
-  .kisa-yol.gorunur {
-    opacity: 0.9;
-    transform: translateY(0);
+  .kart h3 { color: var(--kirmizi); margin-bottom: 8px; }
+  .kart img.portre { width: 100%; height: 170px; object-fit: cover; border-radius: 6px; margin-bottom: 12px; }
+  .kart .kaynak { font-size: .8em; opacity: .7; font-style: italic; margin-top: 6px; }
+  .kart:nth-child(2) { border-top-color: var(--kirmizi); }
+  .kart:nth-child(3) { border-top-color: var(--toprak); }
+  ul.dolap { list-style: none; }
+  ul.dolap li { padding: 8px 0 8px 28px; position: relative; }
+  ul.dolap li::before { content: "🪶"; position: absolute; left: 0; }
+  blockquote {
+    background: #fff; border-left: 6px solid var(--turkuaz);
+    padding: 20px 24px; border-radius: 8px;
+    font-style: italic; margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
   }
-
-  /* Kompakt kaynak linkleri */
-  .kaynak-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--kart-bg);
-    border: 1.5px solid rgba(139,90,43,0.2);
-    padding: 9px 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    color: var(--metin);
-    font-size: 0.88em;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    letter-spacing: 0.3px;
+  footer {
+    background: var(--koyu); color: var(--kum);
+    text-align: center; padding: 30px 20px; margin-top: 40px;
+    font-size: .95em;
   }
-  .kaynak-link:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    border-color: var(--turkuaz);
-    color: var(--turkuaz);
-  }
-  .kisa-yol span {
-    display: inline-block;
-    background: var(--koyu);
-    color: var(--kum);
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-    margin: 0 2px;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  /* ===== BASİT LİGHTBOX ===== */
-  .lb-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(10,5,2,0.93);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-  .lb-overlay img {
-    max-width: 85vw;
-    max-height: 55vh;
-    border-radius: 4px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-    object-fit: contain;
-    margin-bottom: 12px;
-  }
-  .lb-overlay .lb-kapat {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    color: #dccbb3;
-    font-size: 2.2em;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-    z-index: 1001;
-  }
-  .lb-overlay .lb-kapat:hover { opacity: 1; }
-  .lb-overlay .lb-aciklama {
-    text-align: center;
-    color: #f5e6d3;
-    font-size: 0.95em;
-    padding: 14px 20px;
-    line-height: 1.5;
-    z-index: 2;
-    background: rgba(0,0,0,0.55);
-    border-radius: 8px;
-    max-width: 600px;
-    width: 90%;
-    margin-top: 8px;
-  }
-  .lb-overlay .lb-aciklama strong {
-    display: block;
-    margin-bottom: 5px;
-    color: #fff;
-    font-size: 1.2em;
-  }
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    header { padding: 50px 16px 40px; }
-    header h1 { font-size: 2em; letter-spacing: 1px; }
-    header p { font-size: 0.95em; }
-    nav { gap: 6px; padding: 10px; flex-wrap: wrap; }
-    nav a { padding: 7px 10px; font-size: 0.78em; }
-    .kartlar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .timeline { padding-left: 25px; }
-    .timeline-madde::before { left: -24px; }
-    .galeri-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .galeri-kart .overlay h4 { font-size: 0.95em; }
-    .galeri-kart .overlay p { font-size: 0.8em; }
-    .lb-overlay img { max-height: 45vh; }
-    .lb-overlay .lb-aciklama { font-size: 0.88em; padding: 10px 14px; }
-    .lb-overlay .lb-kapat { top: 8px; right: 12px; font-size: 1.8em; }
-    .yukari-buton { width: 44px; height: 44px; font-size: 1.3em; }
-    .kisa-yol { display: none; }
-    #kartDetayPanel { padding: 18px 16px; margin-top: 16px; }
-    section { padding: 28px 16px; }
-    section h2 { font-size: 1.5em; }
-    blockquote { font-size: 1em; padding: 18px 20px; }
-  }
-  @media (max-width: 480px) {
-    header { padding: 40px 14px 35px; }
-    header h1 { font-size: 1.7em; }
-    nav a { padding: 6px 8px; font-size: 0.72em; }
-    .kartlar { grid-template-columns: 1fr; }
-    .galeri-grid { grid-template-columns: 1fr; gap: 12px; }
-    .galeri-kart .overlay {
-      transform: translateY(0);
-      background: linear-gradient(to top, rgba(20,10,5,0.95), rgba(20,10,5,0.6), transparent);
-    }
-    .galeri-kart .overlay h4 { font-size: 1em; }
-    .galeri-kart .overlay p { font-size: 0.85em; }
-    .lb-overlay img { max-height: 40vh; max-width: 92vw; }
-    .lb-overlay { padding: 10px; }
-    .lb-overlay .lb-aciklama { font-size: 0.85em; width: 95%; }
-    .kart { transform: none !important; }
-    section { padding: 22px 14px; }
-    section h2 { font-size: 1.35em; }
-    .timeline-madde { padding: 12px 14px; font-size: 0.9em; }
-    .galeri-arama input { font-size: 16px; padding: 10px 14px; }
-    .galeri-filtreler { gap: 6px; }
-    .galeri-filtreler button { padding: 6px 12px; font-size: 0.8em; }
-    footer { font-size: 0.85em; padding: 25px 16px; }
-  }
+  .not { font-size: .9em; opacity: .75; font-style: italic; }
 </style>
 </head>
 <body>
@@ -901,467 +86,188 @@
 <header>
   <h1>🪶 Kızılderililer</h1>
   <p>Kuzey Amerika'nın binlerce yıllık ilk halklarının dünyası</p>
-  <div class="siluet"></div>
 </header>
 <div class="serit"></div>
 
 <nav>
   <a href="#tarih">Tarih</a>
-  <a href="#kökenler">Kökenler</a>
   <a href="#kabileler">Kabileler</a>
-  <a href="#direnis">Direniş</a>
   <a href="#kultur">Kültür</a>
-  <a href="#gunumuz">Günümüz</a>
-  <a href="#efsaneler">Efsaneler</a>
-  <a href="#kadinlar">Kadınlar</a>
-  <a href="#kutsal">Kutsal Yerler</a>
+  <a href="#liderler">Liderler</a>
+  <a href="#bugun">Bugün</a>
   <a href="#galeri">Galeri</a>
   <a href="#sozler">Sözler</a>
-  <a href="#kaynaklar">Kaynaklar</a>
-  <button class="tema-buton" id="temaButon" title="Karanlık Mod (T)">🌙 Tema</button>
 </nav>
 
-<!-- TARİH -->
-<section id="tarih" class="reveal">
+<section id="tarih">
   <h2>Tarih</h2>
-  <div class="timeline">
-    <div class="timeline-madde reveal">
-      <strong>15.000–20.000 yıl önce</strong>
-      Ataları Bering Boğazı üzerinden Asya'dan Amerika'ya geçen avcı-toplayıcı topluluklar. Buzul Çağı'nın zorlu şartlarına karşı müthiş bir yaşam mücadelesi.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>1492</strong>
-      Kristof Kolomb'un yolculuğuyla başlayan Avrupa teması; yerli halklar için bir dönüm noktası. Yeni dünyanın kaderi sonsuza dek değişti.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>1890</strong>
-      Hayalet Dansı (Ghost Dance) — umudu ve birliği temsil eden ruhani hareket. Wounded Knee'de acı sonu yaşandı.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>1830 İskan Yasası</strong>
-      (Indian Removal Act) — Başkan Andrew Jackson tarafından imzalanan bu yasa, doğu kabilelerini (özellikle Cherokee, Choctaw, Creek) zorla batıya sürdü. "Gözyaşı Yolu" (Trail of Tears) olarak tarihe geçen bu zorunlu göçte binlerce insan hayatını kaybetti.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>1862 Homestead Yasası</strong>
-      Beyaz yerleşimcilere "boş" topraklar ücretsiz verildi. Fakat bu topraklar aslında yerli halkların anavatanıydı. Bu yasa, Batı'nın hızla işgal edilmesine ve buffalo sürülerinin kasıtlı yok edilmesine yol açtı.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>1887 Dawes Yasası</strong>
-      Yerli topraklarını bireysel parsellere bölerek kabile mülkiyetini yok etti. "Aşırı" kalan topraklar beyazlara satıldı. Bu yasa, kabile ekonomisini ve toplumsal yapısını parçaladı.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Günümüz</strong>
-      ABD ve Kanada'da 5 milyondan fazla insan kendini yerli soyundan saymaktadır. Miras, dil ve toprak mücadelesi sürüyor.
-    </div>
-  </div>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🪶</span><span class="cizgi"></span></div>
-</section>
-
-<!-- KÖKENLER -->
-<section id="kökenler" class="reveal">
-  <h2>Kökenler ve Asya Bağlantısı</h2>
   <p>
-    Paleoantropolojik ve genetik araştırmalar, Kuzey Amerika'nın ilk halklarının atalarının <strong>Sibirya</strong> ve geniş <strong>Asya steplerinden</strong> geldiğini gösteriyor. Yaklaşık <strong>15.000 ile 20.000 yıl önce</strong> Bering Boğazı'nın donduğu bir dönemde, avcı-toplayıcı topluluklar bu geçitten geçerek yeni kıtaya ayak bastı.
+    Kızılderililer, Kuzey Amerika kıtasının en eski sakinleridir. Ataları yaklaşık
+    <strong>15.000–20.000 yıl önce</strong>, Bering Boğazı üzerinden Asya'dan Amerika'ya
+    geçmiş avcı-toplayıcı topluluklardır. Zamanla kıtanın her köşesine yayıldılar ve
+    yüzlerce farklı halk, dil ve kültür geliştirdiler.
   </p>
   <p>
-    Bu erken göçmenlerin bazı kalıtsal ve kültürel izleri, günümüzde hâlâ <strong>Altay, Sibirya ve Uzak Doğu</strong> halklarıyla paralellikler taşır. Mitokondriyal DNA çalışmaları, yerli Amerikalıların tek bir genetik havuzdan (Sibirya'daki antik Mal'ta-Buret kültürüne benzer) türediğini ortaya koymuştur.
+    1492'de Kristof Kolomb'un yolculuğuyla başlayan Avrupa teması, yerli halkların
+    tarihinde dönüm noktası oldu. Hastalıklar, savaşlar ve toprak kayıpları yüzünden
+    nüfusları büyük ölçüde azaldı; ancak kültürleri bugün de yaşamaya devam ediyor.
+    Bugün ABD ve Kanada'da <strong>5 milyondan fazla</strong> insan kendini yerli
+    soyundan saymaktadır.
   </p>
-  <div class="timeline">
-    <div class="timeline-madde reveal">
-      <strong>Sibirya Bağlantısı</strong>
-      Antik DNA analizleri, ilk göçmenlerin Sibirya'nın güneyindeki avcı-toplayıcı gruplarla aynı genetik hatları paylaştığını gösteriyor. Bu dönemde Avrasya stepindeki atlı kültürlerin izleri görülür.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Beringia: Kayıp Kıta</strong>
-      Buzul Çağı'nda Bering Boğazı donduğunda ortaya çıkan geniş toprak parçası <em>Beringia</em>, Asya ile Amerika arasında binlerce yıllık bir geçiş koridoru oluşturdu. İnsanlar ve hayvanlar bu köprüden karşıya aktı.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Dil ve Kültür Paralellikleri</strong>
-      Antropologlar, bazı yerli Amerikalı inanışlar, totemizm, şamanizm ve gökyüzü kültleriyle Sibirya/Altay halkları arasında benzer motifler olduğunu kaydeder. Bunlar binlerce yıllık hafızanın kültürel izleri olabilir.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Üç Büyük Göç Dalgası</strong>
-      Linguistik ve arkeolojik kanıtlara göre, Kuzey Amerika'ya en az üç büyük göç dalgası oldu: İlk göç 15-20 bin yıl önce (çoğu kabile), ikinci 8-10 bin yıl önce (Na-Dene dilleri), üçüncü ise Eskimo-Aleut göçü (5 bin yıl önce).
-    </div>
-  </div>
-  <p class="not" style="margin-top:20px; text-align:center; opacity:0.75;">
-    Not: Kızılderililer ile modern Türk halkları arasında doğrudan soy bağı kurmak bilimsel olarak kabul görmez; ancak her iki halk da Asya steplerinin derin tarihinden gelen geniş bir avcı-toplayıcı mirası paylaşır.
-  </p>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🌏</span><span class="cizgi"></span></div>
 </section>
 
-<!-- KABİLELER -->
-<section id="kabileler" class="reveal">
+<section id="kabileler">
   <h2>Önemli Kabileler</h2>
-  <p style="text-align:center; opacity:0.6; margin-bottom:18px; font-style:italic; font-size:0.9em;">Kartların üzerine tıklayarak detaylı bilgilere ulaşabilirsiniz</p>
   <div class="kartlar">
-    <div class="kart reveal" onclick="kartToggle(this)">
-      <img class="portre" src="images/sitting-bull.jpg" alt="Oturan Boğa, 1885">
+    <div class="kart">
+      <img class="portre" src="sitting-bull.jpg" alt="Oturan Boğa, 1885">
       <h3>Lakota (Sioux)</h3>
-      <p>Great Plains'in ünlü atlı avcıları. Oturan Boğa ve Kızıl Bulut gibi liderleriyle direnişleri efsaneleşmiştir.</p>
+      <p>Great Plains'in ünlü atlı avcıları. Oturan Boğa ve Kızıl Bulut gibi liderleriyle
+      ABD ordusuna karşı direnişleri efsaneleşmiştir.</p>
       <p class="kaynak">📷 Oturan Boğa, Montreal 1885 · Kamu malı</p>
-      <span class="ok-isareti">▼</span>
-      <div class="kart-detay">
-        <p><strong>Great Plains'in atlı ulusu.</strong> Lakota, Kuzey Amerika'nın en tanınmış yerli halklarından biridir. "Oceti Sakowin" (Yedi Ocak Konseyi) adı verilen büyük birlik, Dakota, Nakota ve Lakota lehçelerini konuşan halklardan oluşur.</p>
-        <p>1876'da <strong>Küçük Bighorn Savaşı</strong>'nda Albay Custer'ın 7. Süvari Alayı'nı yenilgiye uğrattılar. Liderleri <strong>Oturan Boğa (Sitting Bull)</strong> ve <strong>Kızıl Bulut (Red Cloud)</strong>, ABD'nin Batı'ya doğru genişlemesine karşı en etkili direnişi örgütledi.</p>
-        <p>Dini ritüelleri arasında <strong>Güneş Dansı (Sun Dance)</strong> ve <strong>Rüya Arayışı (Vision Quest)</strong> önemli yer tutar. Buffalo (bizon) hem besin kaynağı hem de kutsal bir varlıktı. Günümüzde Güney Dakota'daki Pine Ridge ve Rosebud rezervasyonlarında yaşarlar.</p>
-        <p>1890 <strong>Wounded Knee Katliamı</strong>, Lakota tarihinin en acı olayıdır. Silahsız sivillere ateş açılması, silahlı direnişin sembolik sonu oldu.</p>
-      </div>
     </div>
-    <div class="kart reveal" onclick="kartToggle(this)">
-      <img class="portre" src="images/navajo.jpg" alt="Navajo tıpbabası, 1900">
+    <div class="kart">
+      <img class="portre" src="navajo.jpg" alt="Navajo tıpbabası, 1900">
       <h3>Navajo (Diné)</h3>
-      <p>Dokumacılığı ve kum resmi sanatıyla ünlü; "Uzun Yürüyüş" trajedisi tarihlerine damga vurmuştur.</p>
+      <p>Amerika'nın en kalabalık kabilelerinden. Dokumacılığı ve kum resmi sanatıyla
+      ünlüdürler; "Uzun Yürüyüş" trajedisi tarihlerine damga vurmuştur.</p>
       <p class="kaynak">📷 Navajo tıpbabası, E.S. Curtis 1900 · Kamu malı</p>
-      <span class="ok-isareti">▼</span>
-      <div class="kart-detay">
-        <p><strong>Diné</strong> (İnsanlar) olarak kendilerini tanımlarlar ve günümüzde en kalabalık yerli kabiledir (170.000'den fazla nüfus). Güneybatı ABD'nin (Arizona, New Mexico, Utah) çöl ve platolarında yaşarlar.</p>
-        <p>1864'te yaşanan <strong>"Uzun Yürüyüş" (The Long Walk)</strong> trajedisi, 10.000'den fazla Navajo'nun zorla yürütülüp Bosque Redondo toplama kampına sürülmesidir. Yüzlerce insan açlık ve hastalıktan öldü. 1868 anlaşmasıyla anavatanlarına dönmelerine izin verildi.</p>
-        <p><strong>Kum resmi sanatı (sand painting)</strong> ve <strong>kilim dokumacılığı</strong> dünya çapında ün yapmıştır. Yuvarlak kerpiç evleri <strong>Hogan</strong>, güneş enerjisini içeride tutacak şekilde tasarlanmıştır.</p>
-        <p>II. Dünya Savaşı'nda <strong>Navajo Code Talkers</strong> (Navajo Şifrecileri), Japonlar tarafından hiç kırılamayan bir askeri şifre dili geliştirdi. Bu sayada 800 civarında Navayo, Pasifik cephesinde görev aldı.</p>
-      </div>
     </div>
-    <div class="kart reveal" onclick="kartToggle(this)">
-      <img class="portre" src="images/irokuez.jpg" alt="Altı Ulus genç şefi">
+    <div class="kart">
+      <img class="portre" src="irokuez.jpg" alt="Altı Ulus genç şefi, John Trumbull">
       <h3>İrokezler (Haudenosaunee)</h3>
-      <p>Altı ulusun birliği, demokratik konsey sistemiyle dünyanın en eski yaşayan federasyonlarından biri.</p>
+      <p>Altı ulusun oluşturduğu birlik, demokratik konsey sistemiyle dünyanın en eski
+      yaşayan federasyonlarından biri sayılır.</p>
       <p class="kaynak">📷 "Genç Şef", J. Trumbull · Kamu malı</p>
-      <span class="ok-isareti">▼</span>
-      <div class="kart-detay">
-        <p><strong>Haudenosaunee</strong> (Uzunevin İnsanları), dünyanın en eski yaşayan demokratik konfederasyonudur. Beş, sonra Altı Ulus'tan oluşur: <strong>Mohawk, Oneida, Onondaga, Cayuga, Seneca</strong> ve sonradan katılan <strong>Tuscarora</strong>.</p>
-        <p>MS 1142'te kurulan <strong>Büyük Barış Konfederasyonu (Great Law of Peace)</strong>, ABD Anayasası'nın yazarı tarafından "en mükemmel devlet yönetimi" olarak övülmüştür. Beyaz Saray'ın kubbesi, Haudenosaunee konsey tipi olan <strong>Longhouse</strong>'tan esinlenmiştir.</p>
-        <p>Toplumda <strong>matrilineal sistem</strong> (soy anne tarafından takip edilir) egemendir. Kadınlar toprak mülkiyetine sahiptir ve savaş barış kararlarında <strong>veto hakkı</strong> kullanabilir.</p>
-        <p><strong>Lacrosse</strong> oyununun mucididir. "Hiawatha" efsanesi ve Tadodaho efsanesi, birliğin kuruluşunu anlatır. Günümüzde New York eyaleti ile Kanada Ontario arasındaki topraklarda yaşarlar.</p>
-      </div>
     </div>
-    <div class="kart reveal" onclick="kartToggle(this)">
-      <img class="portre" src="images/cherokee.jpg" alt="Cherokee şefi John Ross">
+    <div class="kart">
+      <img class="portre" src="cherokee.jpg" alt="Cherokee şefi John Ross">
       <h3>Cherokee</h3>
-      <p>Kendi alfabesini geliştiren, gazete çıkaran ve anayasası olan köklü bir halk. Şef John Ross.</p>
+      <p>Kendi alfabesini (Sekoya'nın hece yazısını) geliştiren, gazete çıkaran ve
+      anayasası olan köklü bir halk. Portrede şef John Ross.</p>
       <p class="kaynak">📷 Şef John Ross · Kamu malı</p>
-      <span class="ok-isareti">▼</span>
-      <div class="kart-detay">
-        <p><strong>Aniyunwiya</strong> (Gerçek İnsanlar) olarak kendilerini tanımlar. Güneydoğu ABD'nin (Georgia, Tennessee, Kuzey Carolina) ormanlık dağlarında köklü bir uygarlık kurdular. 5.000 yıllık tarihleriyle en eski yerli halklardan biridir.</p>
-        <p>1821'de <strong>Sekoya (Sequoyah)</strong>, 85 harfli hece alfabesi geliştirerek tarihte kendi alfabesini icat eden tek avcı-toplayıcı oldu. 1828'de <strong>Çerokili Phoenix</strong> gazetesi, ilk yerli Amerikalı gazete oldu. 1827'de yazılmış anayasa, bir yerli ulusun ilk anayasasıdır.</p>
-        <p><strong>Şef John Ross</strong> (1790-1866), eğitim reformcusu ve liderdir. Fakat 1830'lardaki <strong>Hint Göç Yasası (Indian Removal Act)</strong> sonucu yaşanan <strong>"Gözyaşı Yolu" (Trail of Tears, 1838-39)</strong>, 16.000 Cherokee'nin zorla Oklahoma'ya sürülmesi ve 4.000'inin yolda ölmesiyle sonuçlandı.</p>
-        <p>Günümüzde Doğu Band Cherokee (Kuzey Carolina) ve Cherokee Nation (Oklahoma) olarak iki ana topluluk halinde yaşarlar.</p>
-      </div>
     </div>
-    <div class="kart reveal" onclick="kartToggle(this)">
-      <img class="portre" src="images/geronimo.jpg" alt="Geronimo">
+    <div class="kart">
+      <img class="portre" src="geronimo.jpg" alt="Geronimo, Edward S. Curtis">
       <h3>Apache</h3>
-      <p>Çöl ve dağ hayatına mükemmel uyum sağlamış, liderleri Geronimo ile bilinen cesur savaşçılar.</p>
+      <p>Çöl ve dağ hayatına mükemmel uyum sağlamış, ünlü liderleri Geronimo ile
+      bilinen cesur savaşçılar halkı.</p>
       <p class="kaynak">📷 Geronimo, E.S. Curtis · Kamu malı</p>
-      <span class="ok-isareti">▼</span>
-      <div class="kart-detay">
-        <p>Kendilerine <strong>Nde</strong> (İnsanlar) derler. "Apache" adı aslında Yuma dilinde "düşman" anlamına gelir. Güneybatı ABD ve kuzey Meksika'nın çöl, dağ ve kanyonlarında yaşarlar. <strong>Chiricahua, Mescalero, Jicarilla, Lipan, Western Apache</strong> ve <strong>Plains Apache</strong> olmak üzere altı ana grup vardır.</p>
-        <p><strong>Geronimo</strong> (1829-1909; gerçek adı Goyathlay), 25 yıl süren direnişiyle tarihe geçti. 1886'ya kadar ABD ve Meksika ordularına karşı çölde gerilla savaşı yürüttü. Sonunda teslim olup Florida'da hapiste tutuldu, ölümüne kadar özgürlüğüne kavuşamadı.</p>
-        <p>Diğer önemli lider <strong>Cochise</strong> (Chiricahua), 12 yıl süren savaşlar sonunda 1872'de anlaşma yaptı. Apaceler, çölde iz bırakmadan hareket etme, gizlenme ve hayatta kalma sanatında eşsizdir.</p>
-        <p><strong>Sunrise Dance (Şafak Dansı)</strong>, kız çocuklarının ergenliğe geçişini kutlayan kutsal bir ritüeldir. Ayrıca <strong>hasır sepet dokumacılığı</strong> ve savaş şarkıları kültürünün önemli parçasıdır.</p>
-      </div>
     </div>
-    <div class="kart reveal" onclick="kartToggle(this)">
+    <div class="kart">
       <h3>Çerokiler Öncesi Uygarlıklar</h3>
-      <p>Cahokia gibi dev toprak höyük şehirleri, Avrupa öncesi Kuzey Amerika'nın büyük şehirleriydi. Mississippi vadisinde medeniyet çiçek açmıştı.</p>
-      <span class="ok-isareti">▼</span>
-      <div class="kart-detay">
-        <p>Avrupalılar gelmeden önce Kuzey Amerika, oldukça gelişmiş uygarlıklara ev sahipliği yapıyordu. Bunların en büyüğü <strong>Cahokia</strong>'dır (günümüzde Illinois yakınlarında, MS 1050-1200). 20.000 nüfusuyla o dönemde Londra'dan daha kalabalıktı.</p>
-        <p>Cahokia'nın merkezindeki <strong>Monks Mound</strong>, 30 metre yüksekliğinde ve 7 hektarlık tabanıyla Kuzey Amerika'nın en büyük toprak höyüğüdür. Burada astronomik gözlem alanları, elit mezarlar ve karmaşık bir toplumsal yapı bulunmuştur.</p>
-        <p>Öncesinde <strong>Adena (MÖ 1000 - MS 200)</strong> ve <strong>Hopewell (MS 200 - 500)</strong> kültürleri, Ohio Vadisi'nde yönetimsel merkezler, uzak ticaret ağları (bakır, obsidyen, deniz kabuğu) ve büyük törensel höyükler inşa etti.</p>
-        <p><strong>Serpent Mound</strong> (Ohio), 411 metre uzunluğundaki yılan şekilli höyük, dünyanın en büyük effigy (figüratif) höyüğüdür. <strong>Poverty Point</strong> (Louisiana, MÖ 1700) ise dünyanın en eski büyük komplekslerinden biridir.</p>
-      </div>
+      <p>Cahokia gibi dev toprak höyük şehirleri, Avrupa öncesi Kuzey Amerika'nın
+      büyük şehirleriydi.</p>
     </div>
   </div>
-
-  <!-- KART DETAY PANELI -->
-  <div id="kartDetayPanel" style="display:none;">
-    <div class="panel-icerik"></div>
-    <button class="panel-kapat" onclick="kartDetayKapat()" title="Kapat">✕</button>
-  </div>
-
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🏹</span><span class="cizgi"></span></div>
 </section>
 
-<!-- DİRENİŞ -->
-<section id="direnis" class="reveal">
-  <h2>Direniş ve Tarihi Olaylar</h2>
-  <p>
-    Avrupalıların gelişiyle başlayan toprak kaybı, zorunlu göç ve asimilasyon politikalarına karşı yerli halklar <strong>yüzyıllar boyu direniş gösterdi</strong>. Bu direniş, silahlı mücadeleden hukuki ve kültürel mücadeleye kadar uzanan geniş bir yelpazede şekillendi.
-  </p>
-  <div class="timeline">
-    <div class="timeline-madde reveal">
-      <strong>1763 Proklamasyonu</strong>
-      İngiltere Kralı III. George, Appalachi Dağları'nın batısındaki toprakları yerli halkların mülkiyetine bırakma vaadinde bulundu. Ancak koloniler bu ilkeyi tanımadı ve Batı'ya doğru genişlemeye devam etti.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>1812 Savaşı ve Tecumseh</strong>
-      Shawnee lideri Tecumseh, ABD'ye karşı büyük bir yerli konfederasyonu kurmaya çalıştı. Onun vizyonu, farklı kabileler arasında birliği sağlamaktı. Savaşta öldürüldü, fakat mirası hâlâ yaşıyor.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Küçük Bighorn (1876)</strong>
-      Lakota ve Cheyenne savaşçıları, Albay Custer komutasındaki ABD 7. Süvari Alayı'nı yenilgiye uğrattı. Bu zafer, yerli direnişinin sembolü haline geldi.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Wounded Knee Katliamı (1890)</strong>
-      Hayalet Dansı'nı bastırmak amacıyla ABD ordusunun 300'sü aşkın sivil Lakota'yı öldürdüğü trajedi. Bu olay, silahlı direnişin sembolik sonu olarak görülür.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>1973 Wounded Knee İşgali</strong>
-      Amerikan Kızılderili Hareketi (AIM), 1890 katliamının yaşandığı toprakları sembolik olarak işgal ederek dünyanın dikkatini yerli haklarına çekti.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Standing Rock (2016)</strong>
-      Dakota Access Boru Hattı'na karşı Lakota ve destekçilerin yaptığı barışçıl direniş, günümüz yerli hakları mücadelesinin en önemli eylemlerinden biri oldu.
-    </div>
-  </div>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🏹</span><span class="cizgi"></span></div>
-</section>
-
-<!-- KÜLTÜR -->
-<section id="kultur" class="reveal">
+<section id="kultur">
   <h2>Kültür ve İnanç</h2>
   <ul class="dolap">
-    <li><strong>Toprağa saygı:</strong> Doğa bir anakannedir; avlanan her hayvana teşekkür edilir. Her taşın ve nehrin ruhu vardır.</li>
-    <li><strong>Totem direkleri:</strong> Pasifik kıyısı kabilelerinde aile soyunu ve mitolojiyi anlatan oyma sanatı. Her figür bir hikâyedir.</li>
-    <li><strong>Tıp çemberi (Medicine Wheel):</strong> Dört yönü, dört mevsimi, dört evreyi ve hayatın dengesini simgeler. Doğru yolun rehberidir.</li>
-    <li><strong>Kaççina ruhları:</strong> Hopi ve Zuni halklarının yağmur ve bereket temsilcileri. Danslarla dünyaya çağrılırlar.</li>
-    <li><strong>Hayalet Dansı (Ghost Dance):</strong> 1890'da umudu ve birliği temsil eden ruhani hareket. Toprak geri dönecekti inancıyla yapıldı.</li>
-    <li><strong>Söz sanatı:</strong> Hikâye anlatıcılığı (storytelling) en değerli miras aktarım biçimidir. Kış geceleri ateşin başında kuşaktan kuşağa aktarılır.</li>
+    <li><strong>Toprağa saygı:</strong> Doğa bir anakannedir; avlanan her hayvana teşekkür edilir.</li>
+    <li><strong>Totem direkleri:</strong> Pasifik kıyısı kabilelerinde aile soyunu anlatan oyma sanatı.</li>
+    <li><strong>Tıp çemberi (Medicine Wheel):</strong> Dört yönü, dört mevsimi ve hayatın dengesini simgeler.</li>
+    <li><strong>Kaççina ruhları:</strong> Hopi ve Zuni halklarının yağmur ve bereket temsilcileri.</li>
+    <li><strong>Hayalet Dansı (Ghost Dance):</strong> 1890'da umudu temsil eden ruhani hareket.</li>
+    <li><strong>Söz sanatı:</strong> Hikâye anlatıcılığı (storytelling) en değerli miras aktarım biçimidir.</li>
   </ul>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🌙</span><span class="cizgi"></span></div>
 </section>
 
-<!-- GÜNÜMÜZ -->
-<section id="gunumuz" class="reveal">
-  <h2>Günümüz ve Mücadele</h2>
-  <p>
-    Bugün Kuzey Amerika'da yaşayan yerli halklar, geçmişin acılarına rağmen <strong>dillerini, kültürlerini ve toprak haklarını korumak</strong> için çalışıyor. ABD ve Kanada'da 570'den fazla tanınan kabile ve bant bulunuyor.
-  </p>
+<section id="liderler">
+  <h2>Ünlü Liderler</h2>
   <div class="kartlar">
-    <div class="kart reveal">
-      <h3>🗣️ Dil Canlandırma</h3>
-      <p>200 yıl önce 300'ü aşkın yerli dil varken, bugün sadece 170 kadarı kullanılıyor ve birçoğu yok olma tehlikesiyle karşı karşıya. Günümüzde birçok topluluk çocuklarına ana dillerini öğretmek için okul ve kamplar kuruyor.</p>
+    <div class="kart">
+      <img class="portre" src="red-cloud.jpg" alt="Kızıl Bulut">
+      <h3>Kızıl Bulut (Red Cloud, 1822–1909)</h3>
+      <p>Oglala Lakota lideri. ABD ordusuna karşı yürütmüş olduğu Red Cloud Savaşı'nı
+      kazanan tek yerli komutandır; Fort Phil Kearny kalelerinin kapatılmasına yol açmıştır.</p>
+      <p class="kaynak">📷 Kamu malı</p>
     </div>
-    <div class="kart reveal">
-      <h3>🏛️ Hukuk Mücadelesi</h3>
-      <p>1980'den beri birçok toprak davası kazanıldı. Örneğin 2022'de ABD hükümeti, bir asırdır çalınan batı Montana topraklarını Crow kabilesine iade etmeyi kabul etti.</p>
+    <div class="kart">
+      <img class="portre" src="chief-joseph.jpg" alt="Şef Joseph">
+      <h3>Şef Joseph (1840–1904)</h3>
+      <p>Nez Perce lideri. Halkını 1.600 km boyunca ABD ordusuna karşı yönettiği
+      ünlü geri çekilme, askeri tarih derslerinde hâlâ incelenir.
+      “Savaşmak için değil, özgür yaşamak için doğdum” sözü ona aittir.</p>
+      <p class="kaynak">📷 E.S. Curtis · Kamu malı</p>
     </div>
-    <div class="kart reveal">
-      <h3>🎨 Sanat ve Sinema</h3>
-      <p>Yerli yönetmenler, yazarlar ve sanatçılar kendi hikâyelerini kendileri anlatıyor. "Prey" (2022) gibi filmler ve Reservation Dogs dizisi, Kızılderili bakış açısının ana akım medyaya taşınmasına örnek.</p>
+    <div class="kart">
+      <img class="portre" src="sacagawea.jpg" alt="Sacagawea heykeli">
+      <h3>Sacagawea (yak. 1788–1812)</h3>
+      <p>Shoshone kadın rehber. Lewis ve Clark'ın kıtayı katettiği keşif seferinde
+      tercümanlık ve rehberlik etti; Amerika'nın en tanınan kadın figürlerinden biridir.</p>
+      <p class="kaynak">📷 Anıt heykeli · Kamu malı</p>
     </div>
-    <div class="kart reveal">
-      <h3>💧 Çevre ve Toprak</h3>
-      <p>Toprak suyunun (Missouri Nehri havzası) korunması, kutsal sitlerin madencilikten korunması ve orman hakları gibi konularda yerli aktivistler öncülük ediyor.</p>
+    <div class="kart">
+      <img class="portre" src="sequoyah.jpg" alt="Sekoya tablosu">
+      <h3>Sekoya (yak. 1770–1843)</h3>
+      <p>Cherokee düşünür. Tek başına Cherokee hece yazısını icat etti — tarih boyunca
+      bir dilin yazımını tek kişiye borçlu olduğu nadir örneklerdendir.
+      Dev sekoya ağaçları onun adını taşır.</p>
+      <p class="kaynak">📷 H. Inman tablosu · Kamu malı</p>
     </div>
   </div>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🌱</span><span class="cizgi"></span></div>
 </section>
 
-<!-- EFSELLER -->
-<section id="efsaneler" class="reveal">
-  <h2>Mitoloji ve Efsaneler</h2>
+<section id="bugun">
+  <h2>Bugün Yerli Halklar</h2>
   <p>
-    Kızılderili halklarının mitolojisi, doğa ile iç içe geçen, hayvan ruhları ve kahramanların hüküm sürdüğü zengin bir dünyadır. Bu hikâyeler nesilden nesile aktarılmıştır.
+    Kızılderili kültürü müze ve kitaplarda kalmış bir tarih değildir — bugün de
+    yaşıyor. ABD'de <strong>574 federally tanınan kabile</strong>, Kanada'da
+    <strong>600'den fazla First Nations topluluğu</strong> bulunmaktadır.
   </p>
-  <div class="kartlar">
-    <div class="kart reveal">
-      <h3>🐺 Bozkurt ve Yaratılış</h3>
-      <p>Kızılderililerin birçoğu için kurt, bir yaratılış ve yeniden doğuş sembolüdür. Lakota mitolojisine göre, ilk insanlar bir kurtken evrenden düşmüş ve sonra yeniden insana dönüşmüştür.</p>
-    </div>
-    <div class="kart reveal">
-      <h3>🦅 Kartal ve Gökler</h3>
-      <p>Kartal, Göklerin Oğlu olarak bilinir ve en kutsal hayvanlardan biridir. Tüyleri savaş başlıklarına eklenerek cesaret ve onur taşır. Kartal rüyaları en yüce mesajlardır.</p>
-    </div>
-    <div class="kart reveal">
-      <h3>🐻 Ayı Doktoru</h3>
-      <p>Birçok kabilede ayı, şifa bilgisinin sahibidir. Cherokee efsanesine göre, ilk insanlar ayılardan bitkilerin şifasını öğrendi. Ayı kış uykusu, ölüm ve dirilişi simgeler.</p>
-    </div>
-    <div class="kart reveal">
-      <h3>🦌 Geyik Kadın</h3>
-      <p>Lakota efsanesinde, Geyik Kadın (White Buffalo Calf Woman) kutsal bir peygamberdir. Beyaz bizon buzağısıyla gelerek İnsanlara barış borusunu (çanak) getirmiştir. Beyaz bizonun doğumu kutsal bir işarettir.</p>
-    </div>
-    <div class="kart reveal">
-      <h3>🌊 Su Canavarları</h3>
-      <p>İrokez efsanesinde, Thunderer (Gök Gürültüsü) devasa bir kuştur. Kanatlarını çırptığında fırtına ve şimşek doğar. Mississippi'nin kökeninde de su canavarı Mitla vardır.</p>
-    </div>
-    <div class="kart reveal">
-      <h3>🌙 Hayalet Dansı</h3>
-      <p>1890'da Paiute lideri Wovoka tarafından başlatılan ruhani hareket. Beyaz giysili dansçılar, toprağın geri döneceğine ve ataların yeniden canlanacağına inanıyordu.</p>
-    </div>
-  </div>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🌙</span><span class="cizgi"></span></div>
+  <ul class="dolap">
+    <li><strong>Kendine ait topraklar:</strong> Rezervasyonlar (reservations) kendi yönetimlerine, okullarına ve mahkemelerine sahiptir.</li>
+    <li><strong>Dil canlandırma:</strong> Navajoca, Cherokee gibi dilleri yeniden öğretmek için okullar ve uygulamalar kurulmuştur.</li>
+    <li><strong>Powwow (Pow-wow):</strong> Her yıl düzenlenen kabile toplantılarında geleneksel dans, müzik ve kıyafetler sergilenir.</li>
+    <li><strong>Sanat ve sinema:</strong> Yerli sanatçılar, yazarlar ve oyuncular dünya sahnesinde giderek daha görünür hale geliyor.</li>
+    <li><strong>Toprak hakları savunması:</strong> Yerli liderler iklim krizine karşı da öncü sesler olarak anılıyor.</li>
+  </ul>
 </section>
 
-<!-- KADINLAR -->
-<section id="kadinlar" class="reveal">
-  <h2>Kadınların Rolü ve Ünlü İsimler</h2>
-  <p>
-    Kızılderili toplumlarında kadınların yeri kabileden kabileye değişse de, birçok toplulukta güçlü bir otonomi ve saygınlık vardı. Matrilineal sistemlerde soy anne tarafından takip edilir, toprak ve ev kadına aitti.
-  </p>
-  <div class="timeline">
-    <div class="timeline-madde reveal">
-      <strong>Sacagawea (1788-1812)</strong>
-      Shoshone kabilesinden. Lewis ve Clark keşif seferinde rehber ve tercüman olarak görev aldı. Dağ geçitlerini bilmesi seferin başarısı için kritikti. Günümüzde ABD'nin en tanınmış yerli kadın simgelerindendir.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Pocahontas (1596-1617)</strong>
-      Powhatan kabilesinden. İngiliz kolonisi Jamestown ile barış görüşmelerinde aracı oldu. John Smith'in hayatını kurtardığı efsanesi (kaynaklar tartışmalı) batı kültüründe popüler oldu.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Wilma Mankiller (1945-2010)</strong>
-      Cherokee Nation'ın ilk kadın başkanı. 1985-1995 arasında görev yaptı ve kabile ekonomisini canlandırdı, eğitimi geliştirdi. Amerika'nın en etkili yerli liderlerinden biriydi.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Maria Tallchief (1925-2013)</strong>
-      Osage kabilesinden. Amerika'nın ilk büyük balerini. New York City Ballet'in prima ballerina'sı olarak 13 yıl başrol oynadı. Yerli kültürünü sanat dünyasında temsil etti.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>Matoaka (Pocahontas'ın gerçek adı)</strong>
-      Powhatan kabilesindeki adı "Oynak Biri" anlamına gelir. Babası Powhatan, Virginia bölgesindeki en güçlü konfederasyonu yönetiyordu.
-    </div>
-  </div>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">👑</span><span class="cizgi"></span></div>
-</section>
-
-<!-- KUTSAL YERLER -->
-<section id="kutsal" class="reveal">
-  <h2>Kutsal Yerler</h2>
-  <div class="timeline">
-    <div class="timeline-madde reveal">
-      <strong>🏔️ Black Hills (Paha Sapa)</strong>
-      Lakota için "Yüreğin Her Şeyi Olduğu Yer." 1868 Fort Laramie Anlaşması'yla "sonsuza dek korunur" ilan edildi, ancak 1874'te altın keşfedilince bozuldu. Günümüzde dünyanın en büyük dağ oyması olan <strong>Crazy Horse Anıtı</strong> burada inşa ediliyor (tamamlandığında 172 metre).
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>🏔️ Devils Tower (Mato Tipila)</strong>
-      "Ayı Kulübesi" anlamına gelir. Wyoming'deki bu 264 metrelik kule, 20'den fazla kabile için kutsal. Efsaneye göre iki ayı kardeşin kovaladığı kız çocukları buraya tırmanınca Tanrı kuleyi yukarı kaldırmış. 1977'de ilk Ulusal Anıt ilan edildi.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>🏜️ Monument Valley (Tsé Biiʼ Ndzisgaii)</strong>
-      Navajo halkının kutsal toprakları. "Vadideki Kaya" anlamına gelir. Her kule bir efsaneye ev sahipliği yapar: Mittens (Eldivenler) İlk İnsan'ın elleridir. John Ford'un 7 western filmi burada çekildi (1939-1964).
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>🌲 Redwood Ormanları</strong>
-      Yurok, Karok ve Tolowa halklarının kutsal alanları. 2.000 yıllık sekoya ağaçları "yaşayan atalar" olarak görülür. 2024'te Yurok kabilesi ve devlet ortaklaşa <strong>Grizzly Barajı</strong>'nı yıkarak Klamath Nehri'ni eski akışına döndürdü.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>🏞️ Bear Butte (Mato Paha)</strong>
-      Güney Dakota'daki kutsal tepe. Vision Quest (rüya arayışı) yapılan ruhani merkez. 1970'lerde motokros pisti planı, 1982'de Lakota liderlerinin işgaliyle engellendi.
-    </div>
-    <div class="timeline-madde reveal">
-      <strong>⛰️ Mount Shasta</strong>
-      4.322 metrelik volkan, Kuzey Kaliforniya'nın en yüksek noktası. Modoc efsanesinde İlk İnsan burada balık avlayarak dünyayı doldurmuştur. Karuk halkı için somonların ruhlarının yaşadığı yerdir.
-    </div>
-  </div>
-  <div class="ayrac"><span class="cizgi"></span><span class="ikon">🏔️</span><span class="cizgi"></span></div>
-</section>
-<!-- GALERİ -->
-<section id="galeri" class="reveal">
+<section id="galeri">
   <h2>Galeri</h2>
-  <p style="text-align:center; opacity:0.7; margin-bottom:20px; font-style:italic;">Fotoğraflar Wikimedia Commons'tan, serbest lisansla alınmıştır. Tıklayarak büyütebilirsiniz.</p>
+  <p class="not" style="margin-bottom:18px;">Fotoğraflar Wikimedia Commons'tan, serbest lisansla alınmıştır.</p>
+  <div class="kartlar">
 
-  <div class="galeri-arama">
-    <input type="text" id="galeriAra" placeholder="🔍 Başlık veya açıklamaya göre ara..." autocomplete="off">
-  </div>
-
-  <div class="galeri-filtreler">
-    <button class="aktif" data-filtre="tum">Tümü</button>
-    <button data-filtre="lider">Liderler</button>
-    <button data-filtre="kabile">Kabileler</button>
-    <button data-filtre="yasam">Yaşam & Kültür</button>
-    <button data-filtre="doga">Doğa</button>
-  </div>
-
-  <div class="galeri-grid" id="galeriGrid">
-
-    <div class="galeri-kart" data-kategori="lider" data-baslik="oturan boga sitting bull lakota" data-detay="Oturan Boğa (c.1831–1890), Lakota Sioux'nun en ünlü şefi ve manevi lideridir. 1876 Küçük Bighorn Zaferi'nde Albay Custer'ın 7. Süvari Alayı'nı yenilgiye uğratmıştır. Hayalet Dansı'nı savunmuş, Wounded Knee öncesinde direnişin simgesi olmuştur." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket">Lider</span><img src="images/sitting-bull.jpg" alt="Oturan Boğa" loading="lazy"></div>
-      <div class="overlay"><h4>Oturan Boğa</h4><p>Lakota şefi, 1885</p></div>
-      
+    <div class="kart">
+      <h3>Tipi Önünde Nez Perce Çifti (1900)</h3>
+      <img src="tipi.jpg" alt="Tipi önünde Nez Perce çifti, 1900" style="width:100%; border-radius:6px;">
+      <p class="not">Tarihi fotoğraf · Kamu malı (Wikimedia Commons)</p>
     </div>
 
-    <div class="galeri-kart" data-kategori="lider" data-baslik="geronimo apache lider" data-detay="Geronimo (1829–1909), Apache halkının Chiricahua kolundan gelen efsanevi lider ve savaşçıdır. ABD ve Meksika ordularına karşı 25 yıl süren direnişiyle tanınır. Gerçek adı Goyathlay'dır." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket">Lider</span><img src="images/geronimo.jpg" alt="Geronimo" loading="lazy"></div>
-      <div class="overlay"><h4>Geronimo</h4><p>Apache lideri</p></div>
-      
+    <div class="kart">
+      <h3>Totem Direkleri (Alert Bay, Kanada)</h3>
+      <img src="totem.jpg" alt="Alert Bay'deki totem direkleri" style="width:100%; border-radius:6px;">
+      <p class="not">Fotoğraf · Telifsiz (Wikimedia Commons)</p>
     </div>
 
-    <div class="galeri-kart" data-kategori="kabile" data-baslik="navajo tipbaba diné" data-detay="Navajo (Diné), günümüzde ABD'deki en kalabalık yerli kabiledir. Kum resim sanatı, kilim dokumacılığı ve Yuvarlak Hogan evleriyle tanınır. II. Dünya Savaşı'nda Japonların kıramadığı Navajo şifre dili tarihe geçmiştir." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket" style="background:var(--turkuaz)">Kabile</span><img src="images/navajo.jpg" alt="Navajo tıpbabası" loading="lazy"></div>
-      <div class="overlay"><h4>Navajo (Diné)</h4><p>En kalabalık kabile</p></div>
-      
+    <div class="kart">
+      <h3>Oglala Lakota Şefi Kızıl Gömlek'in Tüy Başlığı</h3>
+      <img src="warbonnet.jpg" alt="Oglala Lakota Şefi Kızıl Gömlek'in tüy başlığı" style="width:100%; border-radius:6px;">
+      <p class="not">Peabody Museum koleksiyonu · Kamu malı</p>
     </div>
 
-    <div class="galeri-kart" data-kategori="kabile" data-baslik="irokuez alti ulus haudenosaunee" data-detay="İrokezler (Haudenosaunee), dünyanın en eski yaşayan demokratik konfederasyonudur. MS 1142'de kurulan Büyük Barış Konfederasyonu, ABD Anayasası'nı etkilemiştir. Matrilineal sistemde soy anne tarafından takip edilir." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket" style="background:var(--turkuaz)">Kabile</span><img src="images/irokuez.jpg" alt="İrokezler" loading="lazy"></div>
-      <div class="overlay"><h4>İrokezler (Haudenosaunee)</h4><p>Altı Ulus Konfederasyonu</p></div>
-      
+    <div class="kart">
+      <h3>Bizon Sürüsü (Yellowstone)</h3>
+      <img src="bizon.jpg" alt="Yellowstone'da bizon sürüsü" style="width:100%; border-radius:6px;">
+      <p class="not">Fotoğraf · CC BY 2.0 (Wikimedia Commons)</p>
     </div>
 
-    <div class="galeri-kart" data-kategori="kabile" data-baslik="cherokee sefo john ross" data-detay="Cherokee (Aniyunwiya), Güneydoğu ABD'nin dağlarında köklü bir uygarlık kurmuştur. Sekoya'nın 85 harfli alfabesi, 1828'deki Çerokili Phoenix gazetesi ve 1827 anayasasıyla tanınır. Gözyaşı Yolu (Trail of Tears) en acı hatıralarıdır." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket" style="background:var(--turkuaz)">Kabile</span><img src="images/cherokee.jpg" alt="Cherokee" loading="lazy"></div>
-      <div class="overlay"><h4>Cherokee (Aniyunwiya)</h4><p>Kendi alfabesini icat eden</p></div>
-      
-    </div>
-
-    <div class="galeri-kart" data-kategori="yasam" data-baslik="tipi nez perce cift yasam" data-detay="Tipi (tepee), Great Plains kabilelerinin konik çadırıdır. 12-20 deri parçadan yapılır, soba deliği tepededir. Sadece birkaç dakikada kurulup sökülebilir. Nez Perce çifti, 1900 yılında." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket" style="background:var(--toprak)">Yaşam</span><img src="images/tipi.jpg" alt="Tipi" loading="lazy"></div>
-      <div class="overlay"><h4>Tipi ve Göçebe Yaşam</h4><p>1900 · Nez Perce çifti</p></div>
-      
-    </div>
-
-    <div class="galeri-kart" data-kategori="yasam" data-baslik="totem direk alert bay kanada" data-detay="Totem direkleri, Kuzeybatı Pasifik kıyısı (Kwakiutl, Haida, Tsimshian) kabilelerinde aile soyunu, mitolojiyi ve reenkarnasyon inancını anlatan dev ahşap oymalardır. Her figür bir atayı veya mitolojik varlığı temsil eder." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket" style="background:var(--toprak)">Yaşam</span><img src="images/totem.jpg" alt="Totem" loading="lazy"></div>
-      <div class="overlay"><h4>Totem Direkleri</h4><p>Alert Bay, Kanada</p></div>
-      
-    </div>
-
-    <div class="galeri-kart" data-kategori="yasam" data-baslik="oglala lakota tuy baslik kultur" data-detay="War Bonnet (Tüy Başlığı), Plains kabilelerinde en kutsal başlıktır. Her tüy bir cesaret göstergesidir ve ancak büyük liderler ile savaşçılar takabilir. Kartal tüyü en değerlisi olup, Göklerin Oğlu'nun mesajını taşır." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket" style="background:var(--toprak)">Kültür</span><img src="images/warbonnet.jpg" alt="Tüy Başlığı" loading="lazy"></div>
-      <div class="overlay"><h4>War Bonnet (Tüy Başlığı)</h4><p>Onur ve cesaret</p></div>
-      
-    </div>
-
-    <div class="galeri-kart" data-kategori="doga" data-baslik="bizon yellowstone doga hayvan" data-detay="Bizon (Tatanka), Plains kabileleri için sadece besin değil, kutsal bir varlıktır. Derisi çadır ve giysi, kemiği alet, gübresi yakıt olarak kullanılır. 1800'lerde 60 milyondan 1000'e düşürülmüştür." onclick="lightboxBasit(this)">
-      <div class="galeri-resim"><span class="etiket" style="background:#2e7d32">Doğa</span><img src="images/bizon.jpg" alt="Bizon" loading="lazy"></div>
-      <div class="overlay"><h4>Bizon (Tatanka)</h4><p>Yellowstone · Kutsal hayvan</p></div>
-      
-    </div>
-
-    <div class="galeri-kart" data-kategori="kultur" data-baslik="wampum belgesi antlasma" data-detay="Wampum, mor deniz kabuklarından (quahog) yapılan mor-beyaz boncuklardır. İrokezler tarafından anlaşma, barış ve ittifak belgeleri olarak kullanılır. İki Sıralı Wampum (1613), Haudenosaunee ile Hollandalılar arasındaki eşitlik anlaşmasını simgeler." onclick="lightboxBasit(this)">
-      <div class="galeri-resim" style="background:linear-gradient(135deg, #2c5e4f, #4a7c6f); display:flex; align-items:center; justify-content:center; color:#fff; font-size:2.5em;">📜</div>
-      <div class="overlay"><h4>İki Sıralı Wampum</h4><p>Barış ve dostluk anlaşması</p></div>
-      
-    </div>
   </div>
 </section>
 
-<!-- SÖZLER -->
-<section id="sozler" class="reveal">
+<section id="sozler">
   <h2>Yerli Sözler</h2>
-  <blockquote class="reveal">
+  <blockquote>
     "Toprağı biz miras almadık; çocuklarımızdan ödünç aldık."
     <br>— Kızılderili vecizesi
   </blockquote>
-  <blockquote class="reveal">
+  <blockquote>
     "Kalbinle dinle; yeryüzünün şarkısını duyacaksın."
     <br>— Lakota öğretisi
   </blockquote>
-</section>
-
-<!-- KAYNAKLAR -->
-<section id="kaynaklar" class="reveal" style="padding-bottom:20px;">
-  <h2 style="font-size:1.4em;">🔗 Kaynaklar</h2>
-  <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:15px;">
-    <a class="kaynak-link" href="https://tr.wikipedia.org/wiki/K%C4%B1z%C4%B1lderililer" target="_blank" rel="noopener"><span>📚</span> Wiki (TR)</a>
-    <a class="kaynak-link" href="https://en.wikipedia.org/wiki/Native_Americans_in_the_United_States" target="_blank" rel="noopener"><span>📚</span> Wiki (EN)</a>
-    <a class="kaynak-link" href="https://www.youtube.com/watch?v=1knIpTuzUW8" target="_blank" rel="noopener"><span>▶️</span> PBS: Yıldızlar ve Medeniyet</a>
-    <a class="kaynak-link" href="https://www.youtube.com/watch?v=L3H32D8UEeU" target="_blank" rel="noopener"><span>▶️</span> Amerika'nın İlk Halkları</a>
-    <a class="kaynak-link" href="https://www.youtube.com/watch?v=MazI9dFA6ME" target="_blank" rel="noopener"><span>▶️</span> Büyük Kızılderili Ulusları</a>
-    <a class="kaynak-link" href="https://www.youtube.com/watch?v=LnlAR13Up70" target="_blank" rel="noopener"><span>▶️</span> Geronimo'nun Hayatı</a>
-    <a class="kaynak-link" href="https://www.nps.gov/subjects/americanindians/index.htm" target="_blank" rel="noopener"><span>🏛️</span> NPS</a>
-    <a class="kaynak-link" href="https://www.bia.gov/" target="_blank" rel="noopener"><span>🏛️</span> BIA</a>
-  </div>
 </section>
 
 <footer>
@@ -1369,274 +275,5 @@
   <p class="not">Bu site eğitim amaçlı hazırlanmış bir tanıtım sayfasıdır.</p>
 </footer>
 
-<!-- YUKARI ÇIK BUTONU -->
-<button class="yukari-buton" id="yukariButon" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Yukarı Çık (Y)">↑</button>
-
-<!-- KLAVYE KISAYOLU -->
-<div class="kisa-yol" id="kisaYol">
-  <strong>Kısayollar</strong><br>
-  <span>G</span> Galeri<br>
-  <span>T</span> Tema<br>
-  <span>Y</span> Yukarı<br>
-  <span>Esc</span> Kapat<br>
-  <span>←→</span> Gez
-</div>
-
-<script>
-  /* ===== SCROLL ANİMASYONU ===== */
-  const gozlemci = new IntersectionObserver((girisler) => {
-    girisler.forEach(g => {
-      if (g.isIntersecting) {
-        g.target.classList.add('gorunur');
-        gozlemci.unobserve(g.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => gozlemci.observe(el));
-
-  /* ===== TEMA ===== */
-  const temaButon = document.getElementById('temaButon');
-  function temaDegistir() {
-    const simdiki = document.documentElement.getAttribute('data-theme');
-    const yeni = simdiki === 'dark' ? null : 'dark';
-    if (yeni) document.documentElement.setAttribute('data-theme', yeni);
-    else document.documentElement.removeAttribute('data-theme');
-    localStorage.setItem('tema', yeni || 'aydinlik');
-    temaButon.textContent = yeni ? '☀️ Tema' : '🌙 Tema';
-  }
-  temaButon.addEventListener('click', temaDegistir);
-  const kayitliTema = localStorage.getItem('tema');
-  if (kayitliTema === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    temaButon.textContent = '☀️ Tema';
-  }
-
-  /* ===== SESLİ ANLATIM ===== */
-  let konusan = null;
-  function sesliOku(bolumId) {
-    const buton = event.target;
-    if (window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel();
-      document.querySelectorAll('.ses-buton').forEach(b => b.classList.remove('aktif'));
-      return;
-    }
-    let metin = '';
-    const bolum = document.getElementById(bolumId);
-    if (bolumId === 'tarih') {
-      metin = 'Tarih. Kızılderililer, Kuzey Amerika kıtasının en eski sakinleridir.';
-      bolum.querySelectorAll('.timeline-madde').forEach(m => {
-        metin += ' ' + m.textContent.trim().replace(/\s+/g, ' ');
-      });
-    } else if (bolumId === 'kabileler') {
-      metin = 'Önemli Kabileler. ';
-      bolum.querySelectorAll('.kart').forEach(k => {
-        metin += k.querySelector('h3').textContent + '. ';
-        metin += k.querySelector('p').textContent + '. ';
-      });
-    } else if (bolumId === 'kultur') {
-      metin = 'Kültür ve İnanç. ';
-      bolum.querySelectorAll('li').forEach(li => {
-        metin += li.textContent.trim().replace(/\s+/g, ' ') + '. ';
-      });
-    }
-    if (metin) {
-      const utter = new SpeechSynthesisUtterance(metin);
-      utter.lang = 'tr-TR';
-      utter.rate = 0.9;
-      utter.onstart = () => buton.classList.add('aktif');
-      utter.onend = () => buton.classList.remove('aktif');
-      window.speechSynthesis.speak(utter);
-    }
-  }
-
-  /* ===== YUKARI ÇIK BUTONU ===== */
-  const yukariButon = document.getElementById('yukariButon');
-  const kisaYol = document.getElementById('kisaYol');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      yukariButon.classList.add('gorunur');
-      kisaYol.classList.add('gorunur');
-    } else {
-      yukariButon.classList.remove('gorunur');
-      kisaYol.classList.remove('gorunur');
-    }
-  });
-
-  /* ===== GALERİ ARAMA ===== */
-  const aramaInput = document.getElementById('galeriAra');
-  aramaInput.addEventListener('input', (e) => {
-    const sorgu = e.target.value.toLowerCase().trim();
-    const kartlar = document.querySelectorAll('.galeri-kart');
-    kartlar.forEach(kart => {
-      const baslik = kart.dataset.baslik || '';
-      const overlay = kart.querySelector('.overlay');
-      const metin = (overlay.textContent || '').toLowerCase();
-      if (!sorgu || baslik.includes(sorgu) || metin.includes(sorgu)) {
-        kart.classList.remove('gizli');
-        if (sorgu) kart.classList.add('vurgula');
-        else kart.classList.remove('vurgula');
-      } else {
-        kart.classList.add('gizli');
-        kart.classList.remove('vurgula');
-      }
-    });
-  });
-
-  /* ===== FİLTRELEME ===== */
-  const filtreButonlar = document.querySelectorAll('.galeri-filtreler button');
-  const galeriKartlar = document.querySelectorAll('.galeri-kart');
-  filtreButonlar.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filtreButonlar.forEach(b => b.classList.remove('aktif'));
-      btn.classList.add('aktif');
-      const filtre = btn.dataset.filtre;
-      aramaInput.value = '';
-      galeriKartlar.forEach(kart => {
-        kart.classList.remove('vurgula');
-        if (filtre === 'tum' || kart.dataset.kategori === filtre) {
-          kart.classList.remove('gizli');
-          kart.style.animation = 'none';
-          kart.offsetHeight;
-          kart.style.animation = 'fadeIn 0.7s ease forwards';
-        } else {
-          kart.classList.add('gizli');
-        }
-      });
-    });
-  });
-
-  /* ===== BASİT LİGHTBOX ===== */
-  function lightboxBasit(kart) {
-    var overlay = document.getElementById('lbOverlay');
-    var img = document.getElementById('lbImg');
-    var aciklama = document.getElementById('lbAciklama');
-    if (!overlay || !img || !aciklama) return;
-
-    var resim = kart.querySelector('img');
-    var h4 = kart.querySelector('h4');
-    var p = kart.querySelector('p');
-    var baslik = h4 ? h4.innerText : '';
-    var metin = p ? p.innerText : '';
-    var detay = kart.getAttribute('data-detay') || '';
-
-    if (resim && resim.src) {
-      img.style.display = 'block';
-      img.src = resim.src;
-      img.alt = resim.alt || baslik;
-    } else {
-      // img yoksa (emoji kart) — img'yi gizle
-      img.style.display = 'none';
-    }
-
-    var html = '<strong style="font-size:1.3em; color:#fff; display:block; margin-bottom:5px;">' + escapeHtml(baslik) + '</strong>';
-    html += '<span style="font-size:0.95em; color:#f5e6d3;">' + escapeHtml(metin) + '</span>';
-    if (detay) {
-      html += '<p style="margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.2); font-size:0.95em; color:#e0d5c5; line-height:1.5;">' + escapeHtml(detay) + '</p>';
-    }
-    aciklama.innerHTML = html;
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function escapeHtml(text) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(text));
-    return div.innerHTML;
-  }
-  function lbKapat(e) {
-    if (!e) e = window.event;
-    var target = e.target || e.srcElement;
-    if (target.id === 'lbOverlay' || target.className.indexOf('lb-kapat') !== -1) {
-      var lb = document.getElementById('lbOverlay');
-      if (lb) { lb.style.display = 'none'; document.body.style.overflow = ''; }
-    }
-  }
-  document.onkeydown = function(e) {
-    e = e || window.event;
-    if (e.keyCode === 27) {
-      var lb = document.getElementById('lbOverlay');
-      if (lb) { lb.style.display = 'none'; document.body.style.overflow = ''; }
-    }
-  };
-
-  /* ===== KABİLE KARTLARI - PANEL ===== */
-  function kartToggle(kart) {
-    var panel = document.getElementById('kartDetayPanel');
-    var icerik = panel.querySelector('.panel-icerik');
-    var zatenAcik = kart.classList.contains('acik');
-    
-    // Tüm kartlardan acik class'ını kaldır
-    document.querySelectorAll('.kart.acik').forEach(function(k) { k.classList.remove('acik'); });
-    
-    // Paneli kapat
-    panel.style.display = 'none';
-    
-    if (zatenAcik) return;
-    
-    // Bu kartı vurgula
-    kart.classList.add('acik');
-    
-    // Detay içeriğini al
-    var detay = kart.querySelector('.kart-detay');
-    if (detay) {
-      icerik.innerHTML = detay.innerHTML;
-      panel.style.display = 'block';
-      setTimeout(function() { panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
-    }
-  }
-  
-  function kartDetayKapat() {
-    document.querySelectorAll('.kart.acik').forEach(function(k) { k.classList.remove('acik'); });
-    document.getElementById('kartDetayPanel').style.display = 'none';
-  }
-
-  /* ===== KUTSAL YERLER KARTLARI ===== */
-  function kutsalToggle(kart) {
-    const acikMi = kart.classList.contains('acik');
-    // Sadece kutsal bölümündeki kutsal-kart'ları kapat
-    const bolum = document.getElementById('kutsal');
-    if (bolum) {
-      bolum.querySelectorAll('.kutsal-kart.acik').forEach(k => {
-        if (k !== kart) k.classList.remove('acik');
-      });
-    }
-    // Tıklananı toggle et
-    kart.classList.toggle('acik', !acikMi);
-  }
-
-  /* ===== KLAVYE KISAYOLLARI ===== */
-  document.addEventListener('keydown', function(e) {
-    // Lightbox kaldırıldı - galeri kartları akordiyon olarak çalışıyor
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.galeri-kart.acik, .kart.acik').forEach(function(k) { k.classList.remove('acik'); });
-      var kp = document.getElementById('kartDetayPanel');
-      if (kp) kp.style.display = 'none';
-      var lb = document.getElementById('lbOverlay');
-      if (lb) { lb.style.display = 'none'; document.body.style.overflow = ''; }
-    }
-    if (e.key === 'g' || e.key === 'G') {
-      e.preventDefault();
-      document.getElementById('galeri').scrollIntoView({ behavior: 'smooth' });
-    }
-    if (e.key === 't' || e.key === 'T') {
-      e.preventDefault();
-      temaDegistir();
-    }
-    if (e.key === 'y' || e.key === 'Y') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    if (e.key === 'a' || e.key === 'A') {
-      e.preventDefault();
-      aramaInput.focus();
-    }
-  });
-</script>
-
-<!-- BASİT LİGHTBOX -->
-<div class="lb-overlay" id="lbOverlay" onclick="lbKapat(event)">
-  <span class="lb-kapat" onclick="lbKapat(event)">&times;</span>
-  <img id="lbImg" src="" alt="">
-  <p class="lb-aciklama" id="lbAciklama"></p>
-</div>
 </body>
 </html>
