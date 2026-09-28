@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hakkında — Kızılderililer</title>
+<meta name="description" content="Kızılderililer bilgi sitesi hakkında: amacımız, içeriğimiz ve eğitim misyonumuz.">
+<style>
+  :root {
+    --toprak: #d35400;
+    --koyu: #3e2723;
+    --kum: #f5e6d3;
+    --kirmizi: #e74c3c;
+    --turkuaz: #1abc9c;
+    --amber: #f39c12;
+    --ahsap: #6d4c41;
+    --deri: #d2b48c;
+    --kagit: #faf3e8;
+    --golge: rgba(20,10,5,0.25);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    color: var(--koyu);
+    line-height: 1.7;
+    background: var(--deri);
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    background: rgba(250,243,232,0.88);
+    z-index: -1; pointer-events: none;
+  }
+  header {
+    text-align: center;
+    padding: 50px 20px 40px;
+    background: linear-gradient(160deg, #3e2723 0%, #8b5a2b 30%, #d35400 55%, #1abc9c 80%, #3e2723 100%);
+    border-bottom: 6px solid var(--ahsap);
+    box-shadow: 0 8px 30px var(--golge);
+  }
+  header h1 {
+    font-size: 2.2em; letter-spacing: 3px;
+    color: var(--kum); font-weight: normal;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  header p { margin-top: 12px; font-style: italic; color: var(--deri); opacity: 0.9; }
+  nav {
+    background: linear-gradient(to bottom, var(--ahsap), #3e2715);
+    text-align: center; padding: 14px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+    border-bottom: 3px solid #3e2715;
+  }
+  nav a {
+    color: var(--kum); text-decoration: none;
+    font-size: 0.9em; letter-spacing: 1px; text-transform: uppercase;
+    padding: 6px 0; border-bottom: 2px solid transparent; transition: all 0.3s;
+  }
+  nav a:hover { color: var(--turkuaz); border-bottom-color: var(--turkuaz); }
+  main {
+    max-width: 820px; margin: 40px auto; padding: 40px 36px;
+    background: var(--kagit);
+    border: 1px solid rgba(139,90,43,0.15);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px var(--golge);
+  }
+  main h2 {
+    color: var(--ahsap); font-size: 1.4em; font-weight: normal;
+    letter-spacing: 2px; text-transform: uppercase; text-align: center;
+    margin-bottom: 24px; padding-bottom: 14px; position: relative;
+  }
+  main h2::after {
+    content: ""; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 60px; height: 3px;
+    background: linear-gradient(to right, transparent, var(--kirmizi), var(--turkuaz), var(--kirmizi), transparent);
+    border-radius: 2px;
+  }
+  main h3 { color: var(--kirmizi); font-weight: normal; margin: 22px 0 8px; }
+  main p { margin-bottom: 14px; }
+  main ul { margin: 0 0 14px 22px; }
+  main li { margin-bottom: 8px; }
+  a.renkli { color: var(--toprak); }
+  .geri {
+    display: inline-block; margin-top: 26px;
+    padding: 10px 22px; border-radius: 24px;
+    background: var(--toprak); color: #fff; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .geri:hover { background: var(--kirmizi); transform: translateY(-2px); }
+  footer {
+    text-align: center; padding: 25px 16px; font-size: 0.85em;
+    opacity: 0.75;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🪶 Hakkında</h1>
+  <p>Kızılderililer — Kuzey Amerika'nın İlk Halkları</p>
+</header>
+
+<nav>
+  <a href="index.html">Ana Sayfa</a>
+  <a href="iletisim.html">İletişim</a>
+  <a href="about.html" title="English">🇬🇧 EN</a>
+</nav>
+
+<main>
+  <h2>Bu Site Hakkında</h2>
+
+  <p><strong>Kızılderililer — Kuzey Amerika'nın İlk Halkları</strong>, Kuzey Amerika'nın yerli halklarının zengin tarihini, kültürünü ve mirasını tanıtmak amacıyla hazırlanmış bağımsız bir eğitim sitesidir.</p>
+
+  <h3>🎯 Amacımız</h3>
+  <p>Bu sitenin amacı, Kızılderili halklarının binlerce yıllık hikâyesini herkes için erişilebilir, anlaşılır ve saygılı bir dille anlatmaktır. Şunları hedefliyoruz:</p>
+  <ul>
+    <li>Yerli halkların kökenlerini ve Asya bağlantısını bilimsel kaynaklara dayanarak aktarmak</li>
+    <li>Lakota, Navajo, Cherokee, Apache ve İrokez gibi önemli kabileleri tanıtmak</li>
+    <li>Direniş tarihini ve kültürel mirası unutturmamak</li>
+    <li>Günümüzdeki dil, toprak ve hak mücadelelerine dikkat çekmek</li>
+  </ul>
+
+  <h3>📚 İçeriğimiz</h3>
+  <p>Sitedeki tüm metinler açık kaynaklardan (Vikipedi, ulusal park servisleri, akademik yayınlar) derlenerek özgün şekilde yazılmıştır. Fotoğraflar Wikimedia Commons'tan serbest lisansla alınmıştır. Site Türkçe ve İngilizce olmak üzere iki dilde yayınlanmaktadır.</p>
+
+  <h3>🙏 Saygı Notu</h3>
+  <p>Bu site, yerli halkların tarihine ve kültürüne duyulan saygıyla hazırlanmıştır. İçerikte bir hata veya eksiklik fark ederseniz, düzeltmemiz için lütfen <a class="renkli" href="iletisim.html">iletişim sayfamızdan</a> bize ulaşın.</p>
+
+  <a class="geri" href="index.html">← Ana Sayfaya Dön</a>
+</main>
+
+<footer>
+  <p>🪶 Kızılderililer — Kuzey Amerika'nın İlk Halkları · Eğitim amaçlı bir tanıtım sitesidir.</p>
+</footer>
+
+</body>
+</html>

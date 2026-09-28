@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Native Americans</title>
+<meta name="description" content="About the Native Americans information site: our purpose, content and educational mission.">
+<style>
+  :root {
+    --toprak: #d35400;
+    --koyu: #3e2723;
+    --kum: #f5e6d3;
+    --kirmizi: #e74c3c;
+    --turkuaz: #1abc9c;
+    --ahsap: #6d4c41;
+    --deri: #d2b48c;
+    --kagit: #faf3e8;
+    --golge: rgba(20,10,5,0.25);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    color: var(--koyu); line-height: 1.7; background: var(--deri);
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0;
+    background: rgba(250,243,232,0.88); z-index: -1; pointer-events: none;
+  }
+  header {
+    text-align: center; padding: 50px 20px 40px;
+    background: linear-gradient(160deg, #3e2723 0%, #8b5a2b 30%, #d35400 55%, #1abc9c 80%, #3e2723 100%);
+    border-bottom: 6px solid var(--ahsap);
+    box-shadow: 0 8px 30px var(--golge);
+  }
+  header h1 {
+    font-size: 2.2em; letter-spacing: 3px; color: var(--kum);
+    font-weight: normal; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  header p { margin-top: 12px; font-style: italic; color: var(--deri); opacity: 0.9; }
+  nav {
+    background: linear-gradient(to bottom, var(--ahsap), #3e2715);
+    text-align: center; padding: 14px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+    border-bottom: 3px solid #3e2715;
+  }
+  nav a {
+    color: var(--kum); text-decoration: none;
+    font-size: 0.9em; letter-spacing: 1px; text-transform: uppercase;
+    padding: 6px 0; border-bottom: 2px solid transparent; transition: all 0.3s;
+  }
+  nav a:hover { color: var(--turkuaz); border-bottom-color: var(--turkuaz); }
+  main {
+    max-width: 820px; margin: 40px auto; padding: 40px 36px;
+    background: var(--kagit);
+    border: 1px solid rgba(139,90,43,0.15);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px var(--golge);
+  }
+  main h2 {
+    color: var(--ahsap); font-size: 1.4em; font-weight: normal;
+    letter-spacing: 2px; text-transform: uppercase; text-align: center;
+    margin-bottom: 24px; padding-bottom: 14px; position: relative;
+  }
+  main h2::after {
+    content: ""; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 60px; height: 3px;
+    background: linear-gradient(to right, transparent, var(--kirmizi), var(--turkuaz), var(--kirmizi), transparent);
+    border-radius: 2px;
+  }
+  main h3 { color: var(--kirmizi); font-weight: normal; margin: 22px 0 8px; }
+  main p { margin-bottom: 14px; }
+  main ul { margin: 0 0 14px 22px; }
+  main li { margin-bottom: 8px; }
+  a.renkli { color: var(--toprak); }
+  .geri {
+    display: inline-block; margin-top: 26px;
+    padding: 10px 22px; border-radius: 24px;
+    background: var(--toprak); color: #fff; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .geri:hover { background: var(--kirmizi); transform: translateY(-2px); }
+  footer { text-align: center; padding: 25px 16px; font-size: 0.85em; opacity: 0.75; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🪶 About</h1>
+  <p>Native Americans — The First Peoples of North America</p>
+</header>
+
+<nav>
+  <a href="en.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <a href="hakkinda.html" title="Türkçe">🇹🇷 TR</a>
+</nav>
+
+<main>
+  <h2>About This Site</h2>
+
+  <p><strong>Native Americans — The First Peoples of North America</strong> is an independent educational website created to introduce the rich history, culture and heritage of the Native peoples of North America.</p>
+
+  <h3>🎯 Our Mission</h3>
+  <p>The purpose of this site is to tell the thousands-of-years-old story of Native peoples in a way that is accessible, understandable and respectful for everyone. We aim to:</p>
+  <ul>
+    <li>Present the origins of Native peoples and their Asian connection based on scientific sources</li>
+    <li>Introduce major tribes such as the Lakota, Navajo, Cherokee, Apache and Iroquois</li>
+    <li>Keep the history of resistance and cultural heritage alive</li>
+    <li>Draw attention to today's struggles for language, land and rights</li>
+  </ul>
+
+  <h3>📚 Our Content</h3>
+  <p>All texts on this site are compiled from open sources (Wikipedia, national park services, academic publications) and written originally. Photos are taken from Wikimedia Commons under free license. The site is published in two languages: Turkish and English.</p>
+
+  <h3>🙏 A Note of Respect</h3>
+  <p>This site was prepared with respect for the history and culture of Native peoples. If you notice an error or omission in the content, please reach us via our <a class="renkli" href="contact.html">contact page</a> so we can correct it.</p>
+
+  <a class="geri" href="en.html">← Back to Home</a>
+</main>
+
+<footer>
+  <p>🪶 Native Americans — The First Peoples of North America · An introductory site for educational purposes.</p>
+</footer>
+
+</body>
+</html>
