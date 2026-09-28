@@ -1380,16 +1380,6 @@
 <!-- YUKARI ÇIK BUTONU -->
 <button class="yukari-buton" id="yukariButon" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Yukarı Çık (Y)">↑</button>
 
-<!-- KLAVYE KISAYOLU -->
-<div class="kisa-yol" id="kisaYol">
-  <strong>Kısayollar</strong><br>
-  <span>G</span> Galeri<br>
-  <span>T</span> Tema<br>
-  <span>Y</span> Yukarı<br>
-  <span>Esc</span> Kapat<br>
-  <span>←→</span> Gez
-</div>
-
 <script>
   /* ===== SCROLL ANİMASYONU ===== */
   const gozlemci = new IntersectionObserver((girisler) => {
@@ -1459,14 +1449,11 @@
 
   /* ===== YUKARI ÇIK BUTONU ===== */
   const yukariButon = document.getElementById('yukariButon');
-  const kisaYol = document.getElementById('kisaYol');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 400) {
       yukariButon.classList.add('gorunur');
-      kisaYol.classList.add('gorunur');
     } else {
       yukariButon.classList.remove('gorunur');
-      kisaYol.classList.remove('gorunur');
     }
   });
 
